@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends MX_Controller {
+class Users extends MY_Controller {
 
 	function __construct(){
         parent::__construct();
@@ -10,7 +10,7 @@ class Users extends MX_Controller {
     }
 
     public function index(){
-        $users = $this->model->get();
+        $users = $this->get();
         print_r($users);
     }
 }
