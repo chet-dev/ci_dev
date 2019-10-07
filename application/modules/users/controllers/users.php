@@ -13,4 +13,14 @@ class Users extends MY_Controller {
         $users = $this->get();
         print_r($users);
     }
+
+    public function manage(){
+        $data['page_title'] = "Administration > Manage Users";
+        $data['view_file'] = 'manage';
+        $data['module'] = 'users';
+        $data['users'] = $this->get('created_at DESC');
+        $data['total_users'] = $this->count_all();
+
+        echo Modules::run('templates/admin', $data);
+    }
 }
